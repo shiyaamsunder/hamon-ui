@@ -1,5 +1,7 @@
 # Hamon UI - A minimal React component library.
 
+Built using a CSS-in-JS with near-zero runtime library called `@stitches/react`.
+
 ## How to install
 
 ```bash
@@ -134,3 +136,7 @@ List of available colors:
 - Pink
 
 Available hues are from `100` to `900`.
+
+---
+
+Check out `@stitches/react` docs [here](https://stitches.dev/).
