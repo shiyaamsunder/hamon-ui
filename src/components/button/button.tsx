@@ -1,8 +1,10 @@
 import { keyframes } from "@stitches/react";
 import React, { FunctionComponent, HTMLAttributes } from "react";
 import { styled, CommonProps } from "../../stitches.config";
+import { VariantStyles } from "./button-variants";
 
 //TODO: implement isLoading State
+//TODO: reduce style lines
 const StyledButton = styled("button", {
   $$shadowColor: "$colors$purple300",
   $$shadowValues: "0px 0px 0px 2px",
@@ -22,7 +24,7 @@ const StyledButton = styled("button", {
 
   outline: "none",
   width: "auto",
-  minWidth: "$7",
+  minWidth: "$18",
 
   transition: "all 120ms ease-in-out",
 
@@ -43,6 +45,11 @@ const StyledButton = styled("button", {
     backgroundColor: "$gray400",
   },
 
+  // media queries
+
+  // "@bp1": {
+  //   fontSize: "$3",
+  // },
   variants: {
     size: {
       small: {
@@ -62,51 +69,7 @@ const StyledButton = styled("button", {
     },
 
     variant: {
-      outline: {
-        backgroundColor: "transparent",
-        border: "$$borderSize solid $primary",
-        color: "$primary",
-        "&:hover": {
-          backgroundColor: "$purple100",
-        },
-        "&:focus": {
-          boxShadow: "$$shadowValues $$shadowColor",
-        },
-        "&:active": {
-          backgroundColor: "$purple200",
-        },
-      },
-
-      solid: {
-        backgroundColor: "$primary",
-        border: "$$borderSize solid transparent",
-        color: "white",
-
-        "&:hover": {
-          backgroundColor: "$purple600",
-        },
-        "&:focus": {
-          boxShadow: "$$shadowValues $$shadowColor",
-        },
-        "&:active": {
-          backgroundColor: "$purple800",
-        },
-      },
-
-      ghost: {
-        backgroundColor: "transparent",
-        border: "none",
-        color: "$primary",
-        "&:hover": {
-          backgroundColor: "$purple100",
-        },
-        "&:focus": {
-          boxShadow: "$$shadowValues $$shadowColor",
-        },
-        "&:active": {
-          backgroundColor: "$purple100",
-        },
-      },
+      ...VariantStyles,
     },
 
     colorScheme: {
@@ -153,6 +116,63 @@ const StyledButton = styled("button", {
           backgroundColor: "$green800",
         },
       },
+
+      pink: {
+        backgroundColor: "$pink500",
+        color: "white",
+
+        "&:hover": {
+          backgroundColor: "$pink600",
+        },
+        "&:focus": {
+          boxShadow: "$$shadowValues $colors$pink400",
+        },
+        "&:active": {
+          backgroundColor: "$pink800",
+        },
+      },
+      blue: {
+        backgroundColor: "$blue500",
+        color: "white",
+
+        "&:hover": {
+          backgroundColor: "$blue600",
+        },
+        "&:focus": {
+          boxShadow: "$$shadowValues $colors$blue400",
+        },
+        "&:active": {
+          backgroundColor: "$blue800",
+        },
+      },
+      indigo: {
+        backgroundColor: "$indigo500",
+        color: "white",
+
+        "&:hover": {
+          backgroundColor: "$indigo600",
+        },
+        "&:focus": {
+          boxShadow: "$$shadowValues $colors$indigo400",
+        },
+        "&:active": {
+          backgroundColor: "$indigo800",
+        },
+      },
+      yellow: {
+        backgroundColor: "$yellow500",
+        color: "white",
+
+        "&:hover": {
+          backgroundColor: "$yellow600",
+        },
+        "&:focus": {
+          boxShadow: "$$shadowValues $colors$yellow400",
+        },
+        "&:active": {
+          backgroundColor: "$yellow800",
+        },
+      },
     },
   },
 
@@ -193,12 +213,64 @@ const StyledButton = styled("button", {
         },
       },
     },
+    {
+      colorScheme: "yellow",
+      variant: "outline",
+      css: {
+        color: "$yellow500",
+        backgroundColor: "transparent",
+        borderColor: "$yellow500",
+        "&:hover": {
+          backgroundColor: "$yellow200",
+        },
+      },
+    },
+
+    {
+      colorScheme: "blue",
+      variant: "outline",
+      css: {
+        color: "$blue500",
+        backgroundColor: "transparent",
+        borderColor: "$blue500",
+        "&:hover": {
+          backgroundColor: "$blue200",
+        },
+      },
+    },
+
+    {
+      colorScheme: "indigo",
+      variant: "outline",
+      css: {
+        color: "$indigo500",
+        backgroundColor: "transparent",
+        borderColor: "$indigo500",
+        "&:hover": {
+          backgroundColor: "$indigo200",
+        },
+      },
+    },
+
+    {
+      colorScheme: "pink",
+      variant: "outline",
+      css: {
+        color: "$pink500",
+        backgroundColor: "transparent",
+        borderColor: "$pink500",
+        "&:hover": {
+          backgroundColor: "$pink200",
+        },
+      },
+    },
 
     {
       colorScheme: "purple",
       variant: "ghost",
       css: {
         backgroundColor: "$purple100",
+        color: "$purple500",
         "&:hover": {
           backgroundColor: "$purple200",
         },
@@ -226,10 +298,58 @@ const StyledButton = styled("button", {
         },
       },
     },
+    {
+      colorScheme: "pink",
+      variant: "ghost",
+      css: {
+        backgroundColor: "$pink100",
+        color: "$pink500",
+        "&:hover": {
+          backgroundColor: "$pink200",
+        },
+      },
+    },
+
+    {
+      colorScheme: "blue",
+      variant: "ghost",
+      css: {
+        backgroundColor: "$blue100",
+        color: "$blue500",
+        "&:hover": {
+          backgroundColor: "$blue200",
+        },
+      },
+    },
+
+    {
+      colorScheme: "yellow",
+      variant: "ghost",
+      css: {
+        backgroundColor: "$yellow100",
+        color: "$yellow500",
+        "&:hover": {
+          backgroundColor: "$yellow200",
+        },
+      },
+    },
+
+    {
+      colorScheme: "indigo",
+      variant: "ghost",
+      css: {
+        backgroundColor: "$indigo100",
+        color: "$indigo500",
+        "&:hover": {
+          backgroundColor: "$indigo200",
+        },
+      },
+    },
   ],
 
   defaultVariants: {
     size: "medium",
+    variant: "solid",
   },
 });
 
@@ -253,6 +373,9 @@ type HamonButton = FunctionComponent<
 
 /**
  * Simple button element.
+ * It has three variants.
+ * @param variant
+ * `solid`, `outline`, `ghost`
  */
 export const Button: HamonButton = ({ children, ...props }) => {
   return <StyledButton {...props}>{children}</StyledButton>;

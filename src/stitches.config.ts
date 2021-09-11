@@ -1,14 +1,16 @@
 import { createStitches } from "@stitches/react";
 import type * as Stitches from "@stitches/react";
-import { colors, spacings } from "./theme";
+import { colors } from "./theme/colors";
+import { spacings } from "./theme/spacings";
 
 export const {
   styled,
-  // css,
+  css,
   theme,
   createTheme,
   reset,
   config,
+  getCssText,
 } = createStitches({
   theme: {
     colors: {
@@ -20,6 +22,12 @@ export const {
     },
     fontSizes: {
       ...spacings,
+    },
+
+    medisa: {
+      bp1: "(min-width: 640px)",
+      bp2: "(min-width: 768px)",
+      bp3: "(min-width: 1024px)",
     },
     radii: {
       sm: "4px",
@@ -35,50 +43,90 @@ export const {
     },
   },
   utils: {
-    p: (value: Stitches.ScaleValue<"space">) => ({
+    p: (
+      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"padding">
+    ) => ({
       padding: value,
     }),
-    pt: (value: Stitches.ScaleValue<"space">) => ({
+    pt: (
+      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"paddingTop">
+    ) => ({
       paddingTop: value,
     }),
-    pr: (value: Stitches.ScaleValue<"space">) => ({
+    pr: (
+      value:
+        | Stitches.ScaleValue<"space">
+        | Stitches.PropertyValue<"paddingRight">
+    ) => ({
       paddingRight: value,
     }),
-    pb: (value: Stitches.ScaleValue<"space">) => ({
+    pb: (
+      value:
+        | Stitches.ScaleValue<"space">
+        | Stitches.PropertyValue<"paddingBottom">
+    ) => ({
       paddingBottom: value,
     }),
-    pl: (value: Stitches.ScaleValue<"space">) => ({
+    pl: (
+      value:
+        | Stitches.ScaleValue<"space">
+        | Stitches.PropertyValue<"paddingLeft">
+    ) => ({
       paddingLeft: value,
     }),
-    px: (value: Stitches.ScaleValue<"space">) => ({
+    px: (
+      value:
+        | Stitches.ScaleValue<"space">
+        | Stitches.PropertyValue<"paddingLeft">
+    ) => ({
       paddingLeft: value,
       paddingRight: value,
     }),
-    py: (value: Stitches.ScaleValue<"space">) => ({
+    py: (
+      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"paddingTop">
+    ) => ({
       paddingTop: value,
       paddingBottom: value,
     }),
 
-    m: (value: Stitches.ScaleValue<"space">) => ({
+    m: (
+      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"margin">
+    ) => ({
       margin: value,
     }),
-    mt: (value: Stitches.ScaleValue<"space">) => ({
+    mt: (
+      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"marginTop">
+    ) => ({
       marginTop: value,
     }),
-    mr: (value: Stitches.ScaleValue<"space">) => ({
+    mr: (
+      value:
+        | Stitches.ScaleValue<"space">
+        | Stitches.PropertyValue<"marginRight">
+    ) => ({
       marginRight: value,
     }),
-    mb: (value: Stitches.ScaleValue<"space">) => ({
+    mb: (
+      value:
+        | Stitches.ScaleValue<"space">
+        | Stitches.PropertyValue<"marginBottom">
+    ) => ({
       marginBottom: value,
     }),
-    ml: (value: Stitches.ScaleValue<"space">) => ({
+    ml: (
+      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"marginLeft">
+    ) => ({
       marginLeft: value,
     }),
-    mx: (value: Stitches.ScaleValue<"space">) => ({
+    mx: (
+      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"marginLeft">
+    ) => ({
       marginLeft: value,
       marginRight: value,
     }),
-    my: (value: Stitches.ScaleValue<"space">) => ({
+    my: (
+      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"marginTop">
+    ) => ({
       marginTop: value,
       marginBottom: value,
     }),
@@ -169,6 +217,7 @@ type StitchesCSS = Stitches.CSS<typeof config>;
 export interface CommonProps {
   /**
    * Sets the variant for the component.
+   * @default solid
    */
   variant?: "solid" | "outline" | "ghost";
 
@@ -181,7 +230,14 @@ export interface CommonProps {
   /**
    * Sets the colorscheme for the component.
    */
-  colorScheme?: "purple" | "red" | "green";
+  colorScheme?:
+    | "purple"
+    | "red"
+    | "green"
+    | "yellow"
+    | "pink"
+    | "blue"
+    | "indigo";
 
   /**
    * This prop allows to customize the default css of a component.
@@ -198,6 +254,7 @@ export interface CommonProps {
 
 export type CSSProp = Pick<CommonProps, "css">;
 export type ColorSchemeProp = Pick<CommonProps, "colorScheme">;
+export type Spacing = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
 /**
  * Type definitions for CSS properties.

@@ -6,7 +6,7 @@ const StyledBox = styled("div", {
 });
 
 export interface HamonBoxProps extends CSSProp {
-  as?: string;
+  as?: keyof JSX.IntrinsicElements;
 }
 
 type HamonBox = FunctionComponent<
@@ -16,6 +16,8 @@ type HamonBox = FunctionComponent<
 /**
  * Simple Box component that can renders `div` by default.
  * Use **`as`** prop to render different HTML element.
+ *
+ * **NOTE**: Right now the `as` prop doesnt work properly. It will be fixed soon.
  *
  * @example <caption>Example usage of Box with `as` prop.</caption>
  * <Box as="span">Hello</Box>

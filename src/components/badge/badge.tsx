@@ -36,6 +36,15 @@ const StyledBadge = styled("span", {
         backgroundColor: "$green400",
         color: "$green700",
       },
+
+      yellow: {
+        backgroundColor: "$yellow400",
+        color: "$yellow700",
+      },
+
+      pink: { backgroundColor: "$pink400", color: "$pink700" },
+      blue: { backgroundColor: "$blue400", color: "$blue700" },
+      indigo: { backgroundColor: "$indigo400", color: "$indigo700" },
     },
   },
 

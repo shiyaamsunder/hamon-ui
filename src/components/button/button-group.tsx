@@ -1,5 +1,5 @@
 import React, { FunctionComponent, HTMLAttributes } from "react";
-import { styled, CSSProp } from "../../stitches.config";
+import { styled, CSSProp, Spacing } from "../../stitches.config";
 
 const StyledButtonGroup = styled("div", {
   display: "inline-flex",
@@ -9,19 +9,49 @@ const StyledButtonGroup = styled("div", {
 
   variants: {
     spacing: {
-      small: {
+      1: {
+        "& > button:not(:first-of-type)": {
+          ml: "$1",
+        },
+      },
+      2: {
+        "& > button:not(:first-of-type)": {
+          ml: "$2",
+        },
+      },
+      3: {
+        "& > button:not(:first-of-type)": {
+          ml: "$3",
+        },
+      },
+      4: {
         "& > button:not(:first-of-type)": {
           ml: "$4",
         },
       },
-      medium: {
+      5: {
+        "& > button:not(:first-of-type)": {
+          ml: "$5",
+        },
+      },
+      6: {
+        "& > button:not(:first-of-type)": {
+          ml: "$6",
+        },
+      },
+      7: {
+        "& > button:not(:first-of-type)": {
+          ml: "$7",
+        },
+      },
+      8: {
         "& > button:not(:first-of-type)": {
           ml: "$8",
         },
       },
-      large: {
+      9: {
         "& > button:not(:first-of-type)": {
-          ml: "$12",
+          ml: "$9",
         },
       },
     },
@@ -29,7 +59,7 @@ const StyledButtonGroup = styled("div", {
 });
 
 export interface ButtonGroupProps extends CSSProp {
-  spacing?: "small" | "medium" | "large";
+  spacing?: Spacing;
 }
 
 type HamonButtonGroup = FunctionComponent<

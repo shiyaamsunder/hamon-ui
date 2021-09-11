@@ -13,7 +13,6 @@ const Template: Story<HamonBoxProps> = (args) => <Box {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  children: "hello",
   // css: {
   //   width: "100px",
   //   height: "100px",
