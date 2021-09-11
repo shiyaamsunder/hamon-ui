@@ -23,6 +23,8 @@
   ],
   "author": "Shiyaam Sunder",
   "license": "MIT",
+  "repository": "https://github.com/shiyaamsunderms/hamon-ui.git",
+  "homepage": "https://github.com/shiyaamsunderms/hamon-ui.git#readme",
   "peerDependencies": {
     "@stitches/react": "^1.1.0",
     "react": "^17.0.2",
