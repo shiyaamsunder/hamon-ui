@@ -4,13 +4,32 @@ import { styled, CSSProp } from "../../stitches.config";
 const StyledButtonGroup = styled("div", {
   display: "inline-flex",
   "& > button:not(:first-of-type)": {
-    ml: "1rem",
+    ml: "$4",
+  },
+
+  variants: {
+    spacing: {
+      small: {
+        "& > button:not(:first-of-type)": {
+          ml: "$4",
+        },
+      },
+      medium: {
+        "& > button:not(:first-of-type)": {
+          ml: "$8",
+        },
+      },
+      large: {
+        "& > button:not(:first-of-type)": {
+          ml: "$12",
+        },
+      },
+    },
   },
 });
 
 export interface ButtonGroupProps extends CSSProp {
-  // TODO implement spacing prop.
-  spacing?: string;
+  spacing?: "small" | "medium" | "large";
 }
 
 type HamonButtonGroup = FunctionComponent<

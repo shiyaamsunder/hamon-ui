@@ -11,9 +11,7 @@ const Template: Story<HamonInputProps> = (args) => <Input {...args} />;
 
 export const Default = Template.bind({});
 
-Default.args = {
-  children: "hello",
-};
+Default.args = {};
 
 export const Custom = Template.bind({});
 

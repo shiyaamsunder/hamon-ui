@@ -21,6 +21,18 @@ export const {
     fontSizes: {
       ...spacings,
     },
+    radii: {
+      sm: "4px",
+      md: "8px",
+      lg: "12px",
+      xl: "18px",
+      pill: "9999px",
+      round: "50%",
+    },
+
+    sizes: {
+      ...spacings,
+    },
   },
   utils: {
     p: (value: Stitches.ScaleValue<"space">) => ({
@@ -167,7 +179,7 @@ export interface CommonProps {
   size?: "small" | "medium" | "large";
 
   /**
-   * Sets the colorScheme for the component.
+   * Sets the colorscheme for the component.
    */
   colorScheme?: "purple" | "red" | "green";
 

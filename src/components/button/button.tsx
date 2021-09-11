@@ -1,15 +1,16 @@
+import { keyframes } from "@stitches/react";
 import React, { FunctionComponent, HTMLAttributes } from "react";
 import { styled, CommonProps } from "../../stitches.config";
 
-// TODO: Fix button height issues
+//TODO: implement isLoading State
 const StyledButton = styled("button", {
   $$shadowColor: "$colors$purple300",
   $$shadowValues: "0px 0px 0px 2px",
   $$borderSize: "1px",
   backgroundColor: "$gray200",
-  borderRadius: "5px",
+  borderRadius: "$sm",
   border: "none",
-  fontSize: "14px",
+  fontSize: "$3_5",
   color: "$gray700",
   fontFamily: "inherit",
   fontWeight: "600",
@@ -17,9 +18,11 @@ const StyledButton = styled("button", {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
+  padding: "$1 $2",
 
   outline: "none",
   width: "auto",
+  minWidth: "$7",
 
   transition: "all 120ms ease-in-out",
 
@@ -43,18 +46,18 @@ const StyledButton = styled("button", {
   variants: {
     size: {
       small: {
-        padding: "6px 0.75rem",
-        fontSize: "13px",
-        height: "2rem",
+        height: "$8",
+        fontSize: "$3",
       },
 
       medium: {
-        padding: "8px 1rem",
-        height: "2.5rem",
+        minWidth: "$20",
+        height: "$9",
       },
       large: {
-        padding: "10px 1.75rem",
-        height: "2.8rem",
+        minWidth: "$24",
+        height: "$10",
+        fontSize: "$4",
       },
     },
 
@@ -227,7 +230,6 @@ const StyledButton = styled("button", {
 
   defaultVariants: {
     size: "medium",
-    variant: "solid",
   },
 });
 
@@ -237,6 +239,12 @@ export interface HamonButtonProps extends CommonProps {
    * @default false
    */
   disabled?: boolean;
+
+  /**
+   * Set the loading state of the button. It shows a spinner and disables the button
+   * @default false
+   */
+  isLoading?: boolean;
 }
 
 type HamonButton = FunctionComponent<
@@ -246,6 +254,6 @@ type HamonButton = FunctionComponent<
 /**
  * Simple button element.
  */
-export const Button: HamonButton = ({ ...props }) => {
-  return <StyledButton {...props} />;
+export const Button: HamonButton = ({ children, ...props }) => {
+  return <StyledButton {...props}>{children}</StyledButton>;
 };
