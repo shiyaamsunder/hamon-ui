@@ -3,11 +3,11 @@
 import "react-app-polyfill/ie11";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Button, ButtonGroup, Box, Badge, Input } from "../.";
+import { Button, ButtonGroup, Box, Badge } from "../.";
 
 const App = () => {
   return (
-    <Box css={{ width: "70%", margin: "1rem auto" }}>
+    <Box css={{ width: "90%", margin: "1rem auto" }}>
       <Box css={{ my: "2rem" }}>
         <h1>Buttons</h1>
         <ButtonGroup>
@@ -34,6 +34,7 @@ const App = () => {
         <Badge colorScheme="purple">Purple</Badge>
         <Badge colorScheme="green">Green</Badge>
         <Badge colorScheme="red">Red</Badge>
+        <Badge colorScheme="yellow">Yellow</Badge>
       </Box>
 
       <Box css={{ my: "2rem" }}>
