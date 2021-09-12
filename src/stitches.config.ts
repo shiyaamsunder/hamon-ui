@@ -42,202 +42,44 @@ export const {
       ...spacings,
     },
   },
-  utils: {
-    p: (
-      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"padding">
-    ) => ({
-      padding: value,
-    }),
-    pt: (
-      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"paddingTop">
-    ) => ({
-      paddingTop: value,
-    }),
-    pr: (
-      value:
-        | Stitches.ScaleValue<"space">
-        | Stitches.PropertyValue<"paddingRight">
-    ) => ({
-      paddingRight: value,
-    }),
-    pb: (
-      value:
-        | Stitches.ScaleValue<"space">
-        | Stitches.PropertyValue<"paddingBottom">
-    ) => ({
-      paddingBottom: value,
-    }),
-    pl: (
-      value:
-        | Stitches.ScaleValue<"space">
-        | Stitches.PropertyValue<"paddingLeft">
-    ) => ({
-      paddingLeft: value,
-    }),
-    px: (
-      value:
-        | Stitches.ScaleValue<"space">
-        | Stitches.PropertyValue<"paddingLeft">
-    ) => ({
-      paddingLeft: value,
-      paddingRight: value,
-    }),
-    py: (
-      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"paddingTop">
-    ) => ({
-      paddingTop: value,
-      paddingBottom: value,
-    }),
-
-    m: (
-      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"margin">
-    ) => ({
-      margin: value,
-    }),
-    mt: (
-      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"marginTop">
-    ) => ({
-      marginTop: value,
-    }),
-    mr: (
-      value:
-        | Stitches.ScaleValue<"space">
-        | Stitches.PropertyValue<"marginRight">
-    ) => ({
-      marginRight: value,
-    }),
-    mb: (
-      value:
-        | Stitches.ScaleValue<"space">
-        | Stitches.PropertyValue<"marginBottom">
-    ) => ({
-      marginBottom: value,
-    }),
-    ml: (
-      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"marginLeft">
-    ) => ({
-      marginLeft: value,
-    }),
-    mx: (
-      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"marginLeft">
-    ) => ({
-      marginLeft: value,
-      marginRight: value,
-    }),
-    my: (
-      value: Stitches.ScaleValue<"space"> | Stitches.PropertyValue<"marginTop">
-    ) => ({
-      marginTop: value,
-      marginBottom: value,
-    }),
-
-    ta: (value: Stitches.PropertyValue<"textAlign">) => ({ textAlign: value }),
-
-    fd: (value: Stitches.PropertyValue<"flexDirection">) => ({
-      flexDirection: value,
-    }),
-    fw: (value: Stitches.PropertyValue<"flexWrap">) => ({ flexWrap: value }),
-
-    ai: (value: Stitches.PropertyValue<"alignItems">) => ({
-      alignItems: value,
-    }),
-    ac: (value: Stitches.PropertyValue<"alignContent">) => ({
-      alignContent: value,
-    }),
-    jc: (value: Stitches.PropertyValue<"justifyContent">) => ({
-      justifyContent: value,
-    }),
-    as: (value: Stitches.PropertyValue<"alignSelf">) => ({ alignSelf: value }),
-    fg: (value: Stitches.PropertyValue<"flexGrow">) => ({ flexGrow: value }),
-    fs: (value: Stitches.PropertyValue<"flexShrink">) => ({
-      flexShrink: value,
-    }),
-    fb: (value: Stitches.PropertyValue<"flexBasis">) => ({ flexBasis: value }),
-
-    bc: (value: Stitches.PropertyValue<"backgroundColor">) => ({
-      backgroundColor: value,
-    }),
-
-    br: (value: Stitches.PropertyValue<"borderRadius">) => ({
-      borderRadius: value,
-    }),
-    btrr: (value: Stitches.PropertyValue<"borderTopRightRadius">) => ({
-      borderTopRightRadius: value,
-    }),
-    bbrr: (value: Stitches.PropertyValue<"borderBottomRightRadius">) => ({
-      borderBottomRightRadius: value,
-    }),
-    bblr: (value: Stitches.PropertyValue<"borderBottomLeftRadius">) => ({
-      borderBottomLeftRadius: value,
-    }),
-    btlr: (value: Stitches.PropertyValue<"borderTopLeftRadius">) => ({
-      borderTopLeftRadius: value,
-    }),
-
-    bs: (value: Stitches.PropertyValue<"boxShadow">) => ({ boxShadow: value }),
-
-    lh: (value: Stitches.PropertyValue<"lineHeight">) => ({
-      lineHeight: value,
-    }),
-
-    ox: (value: Stitches.PropertyValue<"overflowX">) => ({ overflowX: value }),
-    oy: (value: Stitches.PropertyValue<"overflowY">) => ({ overflowY: value }),
-
-    pe: (value: Stitches.PropertyValue<"pointerEvents">) => ({
-      pointerEvents: value,
-    }),
-    us: (value: Stitches.PropertyValue<"userSelect">) => ({
-      WebkitUserSelect: value,
-      userSelect: value,
-    }),
-
-    userSelect: (value: Stitches.PropertyValue<"userSelect">) => ({
-      WebkitUserSelect: value,
-      userSelect: value,
-    }),
-
-    size: (value: Stitches.PropertyValue<"width">) => ({
-      width: value,
-      height: value,
-    }),
-
-    appearance: (value: Stitches.PropertyValue<"appearance">) => ({
-      WebkitAppearance: value,
-      appearance: value,
-    }),
-    backgroundClip: (value: Stitches.PropertyValue<"backgroundClip">) => ({
-      WebkitBackgroundClip: value,
-      backgroundClip: value,
-    }),
-  },
 });
 
+// ============================================================================== //
+// ================================ TYPE DEFS ================================== //
+// ============================================================================== //
+
 type StitchesCSS = Stitches.CSS<typeof config>;
+
+export type colorSchemes =
+  | "purple"
+  | "red"
+  | "green"
+  | "yellow"
+  | "pink"
+  | "blue"
+  | "indigo";
+
+export type sizes = "small" | "medium" | "large";
+
+export type variants = "solid" | "outline" | "ghost";
 
 export interface CommonProps {
   /**
    * Sets the variant for the component.
    * @default solid
    */
-  variant?: "solid" | "outline" | "ghost";
+  variant?: variants;
 
   /**
    * Sets the size for the component.
    * @default medium
    */
-  size?: "small" | "medium" | "large";
+  size?: sizes;
 
   /**
    * Sets the colorscheme for the component.
    */
-  colorScheme?:
-    | "purple"
-    | "red"
-    | "green"
-    | "yellow"
-    | "pink"
-    | "blue"
-    | "indigo";
+  colorScheme?: colorSchemes;
 
   /**
    * This prop allows to customize the default css of a component.
@@ -254,7 +96,6 @@ export interface CommonProps {
 
 export type CSSProp = Pick<CommonProps, "css">;
 export type ColorSchemeProp = Pick<CommonProps, "colorScheme">;
-export type Spacing = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
 /**
  * Type definitions for CSS properties.
@@ -270,3 +111,5 @@ export type Spacing = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
  */
 
 export type CSS = CSSProp["css"];
+
+export type Spacing = keyof typeof spacings;

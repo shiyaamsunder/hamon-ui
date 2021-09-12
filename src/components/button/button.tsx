@@ -12,7 +12,7 @@ const StyledButton = styled("button", {
   backgroundColor: "$gray200",
   borderRadius: "$sm",
   border: "none",
-  fontSize: "$3_5",
+  fontSize: "$4",
   color: "$gray700",
   fontFamily: "inherit",
   fontWeight: "600",
@@ -44,12 +44,6 @@ const StyledButton = styled("button", {
   "&:active": {
     backgroundColor: "$gray400",
   },
-
-  // media queries
-
-  // "@bp1": {
-  //   fontSize: "$3",
-  // },
   variants: {
     size: {
       small: {

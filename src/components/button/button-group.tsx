@@ -4,54 +4,94 @@ import { styled, CSSProp, Spacing } from "../../stitches.config";
 const StyledButtonGroup = styled("div", {
   display: "inline-flex",
   "& > button:not(:first-of-type)": {
-    ml: "$4",
+    marginLeft: "$4",
   },
 
   variants: {
     spacing: {
       1: {
         "& > button:not(:first-of-type)": {
-          ml: "$1",
+          marginLeft: "$1",
         },
       },
       2: {
         "& > button:not(:first-of-type)": {
-          ml: "$2",
+          marginLeft: "$2",
         },
       },
       3: {
         "& > button:not(:first-of-type)": {
-          ml: "$3",
+          marginLeft: "$3",
         },
       },
       4: {
         "& > button:not(:first-of-type)": {
-          ml: "$4",
+          marginLeft: "$4",
         },
       },
       5: {
         "& > button:not(:first-of-type)": {
-          ml: "$5",
+          marginLeft: "$5",
         },
       },
       6: {
         "& > button:not(:first-of-type)": {
-          ml: "$6",
+          marginLeft: "$6",
         },
       },
       7: {
         "& > button:not(:first-of-type)": {
-          ml: "$7",
+          marginLeft: "$7",
         },
       },
       8: {
         "& > button:not(:first-of-type)": {
-          ml: "$8",
+          marginLeft: "$8",
         },
       },
       9: {
         "& > button:not(:first-of-type)": {
-          ml: "$9",
+          marginLeft: "$9",
+        },
+      },
+      10: {
+        "& > button:not(:first-of-type)": {
+          marginLeft: "$10",
+        },
+      },
+      12: {
+        "& > button:not(:first-of-type)": {
+          marginLeft: "$12",
+        },
+      },
+      14: {
+        "& > button:not(:first-of-type)": {
+          marginLeft: "$14",
+        },
+      },
+      16: {
+        "& > button:not(:first-of-type)": {
+          marginLeft: "16",
+        },
+      },
+      18: {
+        "& > button:not(:first-of-type)": {
+          marginLeft: "$18",
+        },
+      },
+      20: {
+        "& > button:not(:first-of-type)": {
+          marginLeft: "$20",
+        },
+      },
+      24: {
+        "& > button:not(:first-of-type)": {
+          marginLeft: "$24",
+        },
+      },
+      28: {
+        "& > button:not(:first-of-type)": {
+          marginLeft: "$28",
         },
       },
     },

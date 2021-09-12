@@ -68,13 +68,13 @@ Most of the components have a **`colorScheme`** and a **`size`** prop.
 
 **`colorScheme`** prop values:
 
-```tsx
+```jsx
 "purple" | "red" | "green" | "yellow" | "pink" | "blue" | "indigo";
 ```
 
 **`size`** prop values:
 
-```tsx
+```jsx
 "small" | "medium" | "large";
 ```
 
@@ -88,7 +88,7 @@ All Hamon UI elements have **`css`** prop which takes in styles as an object.
 
 ### Example usage.
 
-```tsx
+```jsx
 <Button
   css={{
     backgroundColor: "green",
@@ -113,7 +113,7 @@ For a color:
 
 ```
 
-```tsx
+```jsx
 <Box
   css={{
     backgroundColor: "$purple500",
