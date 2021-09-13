@@ -61,6 +61,7 @@ Components that are available to work with.
 - Box
 - Flex
 - Grid
+- Stack
 
 ## Props
 
