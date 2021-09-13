@@ -42,7 +42,10 @@
     }
   ],
   "np": {
-    "contents": "dist",
+    "contents": [
+      "dist",
+      "types"
+    ],
     "tests": false,
     "cleanup": false
   },
