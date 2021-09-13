@@ -2,9 +2,20 @@ import { keyframes } from "@stitches/react";
 import React, { FunctionComponent, HTMLAttributes } from "react";
 import { styled, CommonProps } from "../../stitches.config";
 import { VariantStyles } from "./button-variants";
+import {
+  generateColorVariants,
+  colorSchemes,
+  generateButtonColorScheme,
+} from "../../utils";
+
+const colorSchemeStyles = generateColorVariants(
+  colorSchemes,
+  generateButtonColorScheme
+);
 
 //TODO: implement isLoading State
-//TODO: reduce style lines
+// TODO: write a function to generate compound Variant styles.
+
 const StyledButton = styled("button", {
   $$shadowColor: "$colors$purple300",
   $$shadowValues: "0px 0px 0px 2px",
@@ -12,7 +23,7 @@ const StyledButton = styled("button", {
   backgroundColor: "$gray200",
   borderRadius: "$sm",
   border: "none",
-  fontSize: "$4",
+  fontSize: "14px",
   color: "$gray700",
   fontFamily: "inherit",
   fontWeight: "600",
@@ -67,106 +78,7 @@ const StyledButton = styled("button", {
     },
 
     colorScheme: {
-      purple: {
-        backgroundColor: "$purple500",
-        color: "white",
-
-        "&:hover": {
-          backgroundColor: "$purple600",
-        },
-        "&:focus": {
-          boxShadow: "$$shadowValues $$shadowColor",
-        },
-        "&:active": {
-          backgroundColor: "$purple800",
-        },
-      },
-      red: {
-        backgroundColor: "$red500",
-        color: "white",
-
-        "&:hover": {
-          backgroundColor: "$red600",
-        },
-        "&:focus": {
-          boxShadow: "$$shadowValues $colors$red400",
-        },
-        "&:active": {
-          backgroundColor: "$red800",
-        },
-      },
-
-      green: {
-        backgroundColor: "$green500",
-        color: "white",
-
-        "&:hover": {
-          backgroundColor: "$green600",
-        },
-        "&:focus": {
-          boxShadow: "$$shadowValues $colors$green400",
-        },
-        "&:active": {
-          backgroundColor: "$green800",
-        },
-      },
-
-      pink: {
-        backgroundColor: "$pink500",
-        color: "white",
-
-        "&:hover": {
-          backgroundColor: "$pink600",
-        },
-        "&:focus": {
-          boxShadow: "$$shadowValues $colors$pink400",
-        },
-        "&:active": {
-          backgroundColor: "$pink800",
-        },
-      },
-      blue: {
-        backgroundColor: "$blue500",
-        color: "white",
-
-        "&:hover": {
-          backgroundColor: "$blue600",
-        },
-        "&:focus": {
-          boxShadow: "$$shadowValues $colors$blue400",
-        },
-        "&:active": {
-          backgroundColor: "$blue800",
-        },
-      },
-      indigo: {
-        backgroundColor: "$indigo500",
-        color: "white",
-
-        "&:hover": {
-          backgroundColor: "$indigo600",
-        },
-        "&:focus": {
-          boxShadow: "$$shadowValues $colors$indigo400",
-        },
-        "&:active": {
-          backgroundColor: "$indigo800",
-        },
-      },
-      yellow: {
-        backgroundColor: "$yellow500",
-        color: "white",
-
-        "&:hover": {
-          backgroundColor: "$yellow600",
-        },
-        "&:focus": {
-          boxShadow: "$$shadowValues $colors$yellow400",
-        },
-        "&:active": {
-          backgroundColor: "$yellow800",
-        },
-      },
+      ...colorSchemeStyles,
     },
   },
 
@@ -372,5 +284,6 @@ type HamonButton = FunctionComponent<
  * `solid`, `outline`, `ghost`
  */
 export const Button: HamonButton = ({ children, ...props }) => {
+  console.log(colorSchemeStyles);
   return <StyledButton {...props}>{children}</StyledButton>;
 };

@@ -1,5 +1,15 @@
 import React, { FunctionComponent, HTMLAttributes } from "react";
 import { styled, CSSProp, ColorSchemeProp } from "../../stitches.config";
+import {
+  generateColorVariants,
+  colorSchemes,
+  generateBadgeColorScheme,
+} from "../../utils";
+
+const colorSchemeStyles = generateColorVariants(
+  colorSchemes,
+  generateBadgeColorScheme
+);
 
 const StyledBadge = styled("span", {
   boxSizing: "border-box",
@@ -23,28 +33,7 @@ const StyledBadge = styled("span", {
     },
 
     colorScheme: {
-      purple: {
-        backgroundColor: "$purple400",
-        color: "$purple700",
-      },
-      red: {
-        backgroundColor: "$red400",
-        color: "$red700",
-      },
-
-      green: {
-        backgroundColor: "$green400",
-        color: "$green700",
-      },
-
-      yellow: {
-        backgroundColor: "$yellow400",
-        color: "$yellow700",
-      },
-
-      pink: { backgroundColor: "$pink400", color: "$pink700" },
-      blue: { backgroundColor: "$blue400", color: "$blue700" },
-      indigo: { backgroundColor: "$indigo400", color: "$indigo700" },
+      ...colorSchemeStyles,
     },
   },
 

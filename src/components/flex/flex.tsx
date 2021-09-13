@@ -1,5 +1,6 @@
 import React, { FunctionComponent, HTMLAttributes } from "react";
 import { styled, CSSProp, Spacing } from "../../stitches.config";
+import { generateSpaceVariants } from "../../utils";
 
 const StyledFlex = styled("div", {
   boxSizing: "border-box",
@@ -63,57 +64,7 @@ const StyledFlex = styled("div", {
       },
     },
     gap: {
-      1: {
-        gap: "$1",
-      },
-      2: {
-        gap: "$2",
-      },
-      3: {
-        gap: "$3",
-      },
-      4: {
-        gap: "$4",
-      },
-      5: {
-        gap: "$5",
-      },
-      6: {
-        gap: "$6",
-      },
-      7: {
-        gap: "$7",
-      },
-      8: {
-        gap: "$8",
-      },
-      9: {
-        gap: "$9",
-      },
-      10: {
-        gap: "$10",
-      },
-      12: {
-        gap: "$12",
-      },
-      14: {
-        gap: "$14",
-      },
-      16: {
-        gap: "$16",
-      },
-      18: {
-        gap: "$18",
-      },
-      20: {
-        gap: "$20",
-      },
-      24: {
-        gap: "$24",
-      },
-      28: {
-        gap: "$28",
-      },
+      ...generateSpaceVariants("gap"),
     },
   },
   defaultVariants: {

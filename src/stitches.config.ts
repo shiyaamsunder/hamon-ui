@@ -79,7 +79,14 @@ export interface CommonProps {
   /**
    * Sets the colorscheme for the component.
    */
-  colorScheme?: colorSchemes;
+  colorScheme?:
+    | "purple"
+    | "red"
+    | "green"
+    | "yellow"
+    | "pink"
+    | "blue"
+    | "indigo";
 
   /**
    * This prop allows to customize the default css of a component.
