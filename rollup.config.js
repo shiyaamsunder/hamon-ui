@@ -3,7 +3,10 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
-import { terser } from "rollup-plugin-terser";
+
+// Rn it makes no difference in the build maybe enable it later.
+// import { terser } from "rollup-plugin-terser";
+
 import del from "rollup-plugin-delete";
 import packageJSON from "./package.json";
 
@@ -34,7 +37,5 @@ export default {
       typescript: require("typescript"),
     }),
     del({ targets: "dist" }),
-
-    terser(),
   ],
 };
