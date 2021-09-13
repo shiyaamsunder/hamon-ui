@@ -27,7 +27,6 @@ export default {
   ],
   plugins: [
     peerDepsExternal(),
-    terser(),
     resolve(),
     commonjs(),
     typescript({
@@ -35,5 +34,7 @@ export default {
       typescript: require("typescript"),
     }),
     del({ targets: "dist" }),
+
+    terser(),
   ],
 };
