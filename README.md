@@ -124,7 +124,11 @@ For a color:
 </Box>
 ```
 
-List of available colors:
+To learn more about the `css` prop checkout `@stitches/react` [docs](https://stitches.dev/docs/styling#pseudo-class).
+
+---
+
+### List of available colors:
 
 - Gray
 - Purple
@@ -138,5 +142,25 @@ List of available colors:
 Available hues are from `100` to `900`.
 
 ---
+
+## Spacing Props
+
+- **`1 `** - `"4px"`
+- **`2 `** - `"8px"`
+- **`3 `** - `"12px"`
+- **`4 `** - `"16px"`
+- **`5 `** - `"20px"`
+- **`6 `** - `"24px"`
+- **`7 `** - `"28px"`
+- **`8 `** - `"32px"`
+- **`9 `** - `"34px"`
+- **`10`** - `"40px"`
+- **`12`** - `"48px"`
+- **`14`** - `"56px"`
+- **`16`** - `"64px"`
+- **`18`** - `"72px"`
+- **`20`** - `"80px"`
+- **`24`** - `"96px"`
+- **`28`** - `"112px"`
 
 Check out `@stitches/react` docs [here](https://stitches.dev/).

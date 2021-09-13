@@ -40,6 +40,11 @@
       "limit": "50 KB"
     }
   ],
+  "np": {
+    "contents": "dist",
+    "tests": false,
+    "cleanup": false
+  },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@rollup/plugin-commonjs": "^20.0.0",
